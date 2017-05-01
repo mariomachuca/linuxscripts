@@ -36,7 +36,7 @@ function connect(){
     killall wpa_supplicant
     ip link set dev $iface up
     wpa_supplicant -B -i $iface -D nl80211 -c /etc/wpa.conf
-    dhcpcd --noarp wlp2s0
+    dhcpcd --noarp $iface
 }
 
 if [ -f /etc/wpa.conf ] ; then
