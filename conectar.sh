@@ -30,6 +30,7 @@ else
     fi
 fi
 function connect(){
+	rfkill unblock all
     dhcpcd -k $iface
     killall dhcpcd
     killall dhclient
